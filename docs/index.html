@@ -1,41 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Minicurso Linux</title>
-    <meta charset="utf-8">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-      body { font-family: 'Droid Serif'; color: white; }
-      h1, h2, h3 {
-					font-family: 'Lato', 'Avenir Next', 'Avenir', 'Trebuchet MS', 'Segoe UI', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
-        font-weight: normal;
-						color: white;
-      }
-			.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; background-color: rgba(1, 1, 1, .3); border-radius: 2px; border-width: 4px; }
+<head>
+  <title>Minicurso Linux</title>
+  <meta charset="utf-8">
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+    @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-    </style>
-  </head>
-  <body>
-			<textarea id="source">
-class: center, middle
+    body {
+      font-family: 'Lato', 'Avenir Next', 'Avenir', 'Trebuchet MS', 'Segoe UI', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      color: white;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Lato', 'Avenir Next', 'Avenir', 'Trebuchet MS', 'Segoe UI', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      font-weight: normal;
+      color: white;
+    }
+
+    .remark-code,
+    .remark-inline-code {
+      font-family: 'Ubuntu Mono';
+      background-color: rgba(1, 1, 1, .3);
+      border-radius: 2px;
+      border-width: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="source">
+
 background-image: url(background.png)
 background-position: center;
 background-repeat: no-repeat;
 background-size: contain;
-
-<!-- $theme: gaia -->
+class: center, middle
 
 Minicurso Linux
 ===============
 
-Roberto P. Alegro
+Gustavo Aguiar, Danilo Nery
 
-Semcomp ß
+Software Freedom Day
 
-ICMC - USP
+IFSC - USP
+
+<!-- part1 -->
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+class: center, middle
+
+<h1>Uma breve introdução</h1>
 
 ---
 background-image: url(background.png)
@@ -46,15 +69,12 @@ background-size: contain;
 Linux
 =====
 
-O que é Linux?
---------------
+<h3> O que é Linux? </h3>
 
-Linux é um Kernel Monolítico baseado em UNIX Open Source e Free.
+Linux é um Kernel Monolítico livre e de código aberto baseado em UNIX.
+Criado <a href="https://en.wikipedia.org/wiki/History_of_Linux#The_creation_of_Linux" target="_blank">"just for fun"</a> por Linus Torvalds, e anunciado em 1991.
 
-Criado por Linux Trovalds em 1991.
-
-Windows?
---------
+<h3> ...e Windows? </h3>
 
 Windows é um Sistema Operacional com um kernel proprietário.
 
@@ -67,47 +87,40 @@ background-size: contain;
 Linux
 =====
 
-Qual o papel de um Kernel?
---------------------------
+<h3> O que é um Kernel? </h3>
 
-Um Kernel é o software que faz a interface entre o Sistema Operacional (e programas) e o hardware.
+Um Kernel é o software que faz a interface entre o Sistema Operacional (e aplicações) e o hardware.
 
-O que é GNU?
-------------
+<h3>O projeto GNU</h3>
 
-GNU é um conjunto de utilidades. Geralmente é pareado com o kernel Linux dando origem ao SO GNU/Linux, muitas vezes chamado só de Linux
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-background-size: contain;
-<!-- ![bg](background.png) -->
-
-Linux
-=====
-
-O que são distribuições Linux e diferenças?
--------------------------------------------
-
-Um Sistema Operacional GNU/Linux com adição de packages, configurações e geralmente de um package manager.
+Originalmente um projeto de sistema operacional, cujo kernel seria o GNU Hurd. O projeto se provou ambicioso demais e o sistema
+se resumiu a um conjunto de ferramentas de software que, eventualmente unido ao kernel Linux, deu origem ao GNU/Linux.
 
 ---
 background-image: url(background.png)
 background-position: center;
 background-repeat: no-repeat;
 background-size: contain;
-<!-- ![bg](background.png) -->
+class: center, middle
+
+Para todos os efeitos, GNU/Linux = Linux
+========================================
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
 
 Linux
 =====
 
-Outros Linux NON-GNU
---------------------
+<h3> O que são distribuições Linux e diferenças? </h3>
 
-- Android
-- Smart TV
-- Embedded
+Um Sistema Operacional GNU/Linux com adição de pacotes, configurações e de um gerenciador de pacotes.
+- Apt (Ubuntu, Debian)
+- YaST (OpenSUSE)
+- Pacman (Arch)
 - etc
 
 ---
@@ -116,168 +129,50 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: contain;
 
-Estrutura de diretórios
-======================
+Linux
+=====
 
-Sistemas Linux seguem uma estrutura de diretórios básica padrão. Com algumas diferenças dependendo da distribuição.
+<h3> Outros Linux NON-GNU </h3>
 
-Hierarquia de diretórios
-
-- `/`
-
-Root - A raiz do sistema
-
-- `/home/usuário`
-
-Home - pasta pessoal do usuário (`~`)
-
-Guarda documentos, fotos, configurações pessoais, etc
-
-- `/root`
-
-Home do usuário `root`
-
-Guarda normalmente configurações específicas para o usuário `root`
+Apesar de (ainda) não dominar o mundo do desktop, Linux é a cara da computação pervasiva.
+- Smart TVs
+- Smartphones (Android)
+- Sistemas embarcados em geral
+- etc
 
 ---
 background-image: url(background.png)
 background-position: center;
 background-repeat: no-repeat;
 background-size: contain;
-<!-- ![bg](background.png) -->
+class: center,middle
 
-Estrutura de diretórios
-======================
+<h1> Antes de prosseguirmos... </h1>
 
-- `/boot`
+<h2> Por quê Linux? O que esperamos? </h2>
 
-Imagem do Kernel e bootloader
-
-
-- `/bin` e `/sbin`
-
-Executáveis binários.
-
-`cat`, `ls`, `grep`, `firefox`, etc
-
-- `/usr`
-
-Arquivos relacionados a todos os usuários
-
-> `/usr/bin` `/usr/share`
-
-- `/tmp`
-
-Arquivos temporários (Apagados a cada reboot)
-
+<!-- part2 -->
+<!-- TODO O que são terminais reais (ttys) ? -->
+  <!-- TODO O básico da edição de texto para resolver problemas -->
+  <!-- TODO O básico da linha de comando para resolver problemas (seção seguinte)? -->
 ---
 background-image: url(background.png)
 background-position: center;
 background-repeat: no-repeat;
 background-size: contain;
-
-Estrutura de diretórios
-======================
-
-- `/proc`
-
-Arquivos que representam processos e sockets
-
-```sh
-# retorna o PID do firefox
-pgrep firefox
-# abre a pasta correspondente ao processo do firefox
-cd /proc/pid
-```
-
-- `/etc` e `/usr/etc`
-
-Arquivos de configuração do sistema.
-
-> `/etc/passwd` - informações de usuários
-
-> `/etc/shadow` - informações de senhas
-
-> `/etc/fstab` - informações do sistema de arquivos
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-background-size: contain;
-
-Estrutura de diretórios
-======================
-
-- `/opt`
-
-Arquivos de programas opcionais
-
-- `/srv`
-
-Raramente presente.
-Usada para manter um servidor Apache
-
-- `/lib` e `/usr/lib`
-
-Bibliotecas do sistema
-
-- `/dev/`
-
-Representação de devices (mouse, teclado, hd)
-
-> `/dev/null`
-
-> `/dev/urandom`
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-background-size: contain;
-<!-- ![bg](background.png) -->
-
-Estrutura de diretórios
-======================
-
-- `/var`
-
-Arquivos variáveis, que tendem a crescer (logs, cache, spool)
-
-- `/media`
-
-Ponto de montagem de dispositivos externos
-
-- `/mnt`
-
-Ponto de montagem de uso livre
-
---
-
-Permissões
-----------
-
-Todos os arquivos do sistema são protegidos por um esquema de permissões que separa o dono do arquivo de usuários pertencentes ao grupo dono de outros. Entraremos em mais detalhes sobre esse sistema de permissões no futuro.
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-background-size: contain;
-<!-- ![bg](background.png) -->
 
 Bash
 ====
 
-O shell bash (Bourne Again SHell) é a implementação mais popular de um shell POSIX. Apesar de existirem outros (ksh, zsh, csh, fish, etc).
+O shell bash (Bourne Again SHell) é a implementação mais popular de uma shell POSIX.
+Existem várias alternativas, cada uma com suas características (ksh, zsh, csh, fish, etc).
 
-Trabalho do shell
------------------
-- Prover uma interface entre o usuário e o sistema operacional.
-
-- Interpretar comandos ou combinações de comandos
+<h3> Trabalho de uma shell </h3>
+- Fornecer uma interface entre o usuário e o sistema operacional
 
 - Gerenciar um ambiente para execução de programas
+
+- Interpretar comandos (lançar programas)
 
 ---
 background-image: url(background.png)
@@ -285,22 +180,202 @@ background-position: center;
 background-repeat: no-repeat;
 backgorund-size: contain;
 
-Comandos Bash
--------------
+<h2> Comandos básicos </h2>
 
-- cd
+- `ls`
 
-Muda o diretório atual. (Change Directory).
+  Lista os conteúdos de um diretório.
 
-- . (aka source)
+- `cd`
 
-Executa os comandos contidos num arquivo nesse shell.
+  Muda o diretório de trabalho atual.
 
-- export
+- `mv`
 
-Marca variável para ser passada com o ambiente para processos filhos.
+  Move/renomeia arquivos e diretórios.
 
---
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+backgorund-size: contain;
+
+<h2> Comandos básicos </h2>
+
+- `cat`
+
+  Inspeciona os conteúdos de um arquivo.
+
+- `head` e `tail`
+
+  Inspeciona o topo e cauda de um arquivo, respectivamente.
+
+- `less`, `more` e `most`
+
+  Inspeciona os conteúdos de um arquivo, na forma de um paginador de terminal.
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+backgorund-size: contain;
+
+<h2> Comandos básicos </h2>
+
+- `touch`
+
+  Cria um novo arquivo vazio.
+
+- `mkdir`
+
+  Cria um novo diretório vazio.
+
+- `.` (AKA source)
+
+  Executa, na shell atual, o conteúdo de um arquivo.
+
+<!-- TODO O que é a sessão gráfica (dada por Xorg) ? -->
+<!-- TODO O que são terminais na sessão gráfica (ptss) ? -->
+
+<!-- part3 -->
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+Estrutura de diretórios
+=======================
+
+Sistemas Linux seguem um padrão de hierarquia do sistema de arquivos.
+A presença de um servidor de display gráfico pode estender um pouco essa estrutura.
+
+- A raíz do sistema:
+
+  `/`
+
+- A pasta pessoal do usuário (`~`):
+
+  `/home/username`
+
+- A pasta pessoal do usuário `root` (administrador):
+
+  `/root`
+
+  de acesso restrito, normalmente guarda configurações específicas do usuário administrador.
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+Estrutura de diretórios
+=======================
+
+- Imagem do Kernel e bootloader:
+
+  `/boot`
+
+- Executáveis binários essenciais:
+
+  `/bin`, `/sbin`
+
+  aplicações vitais ao modo single user (modo de segurança),
+  como `cd`, `ls`, `mv`, `cat`, `find`, `grep`, etc.
+
+- `/tmp`
+
+  Arquivos temporários (Apagados a cada reboot)
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+Estrutura de diretórios
+======================
+
+- Processos e sockets:
+
+  `/proc`
+
+  ```sh
+  pgrep firefox  # encontre o PID do firefox
+  cd /proc/pid   # vá até correspondente ao PID encontrado
+  ```
+
+- Arquivos de configuração do sistema:
+
+  `/etc`
+  
+  - `/etc/shadow`: informações de senhas
+
+  - `/etc/passwd`: informações de usuários
+  
+  - `/etc/fstab`: informações do sistema de arquivos
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+Estrutura de diretórios
+======================
+
+- Bibliotecas essenciais aos binários em `/bin` e `/sbin`:
+
+  `/lib`
+
+- Dispositivos de input/output:
+
+  `/dev/`
+
+  no Linux, <b>tudo é um arquivo.</b>
+
+  - `/dev/null`: dispositivo nulo
+
+  - `/dev/urandom`: eventos de entrada aleatórios
+
+  - `/dev/tty*`: eventos de input dos terminais emulados por kernel
+
+  - `/dev/pts/*`: eventos de input dos terminais emulados pelo sistema do usuário
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+Estrutura de diretórios
+======================
+
+- Arquivos de conteúdo variável e que tendem a crescer (logs, cache, spool):
+
+  `/var`
+
+- Ponto de montagem de uso livre:
+
+  `/mnt`
+
+  dispositivos externos normalmente são montados em `/media`.
+
+- Aplicações e utilidades de usuários:
+
+  `/usr`
+
+  hierarquia secundária para dados de modo multi-usuário.
+
+<!-- part3 -->
+<!-- TODO uma seção só sobre variáveis de ambiente -->
+<!-- TODO como um programa C, por exemplo, pode fazer proveito de uma variável de ambiente? -->
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+backgorund-size: contain;
 
 Variáveis
 ---------
@@ -1149,10 +1224,11 @@ Extra: Tutorial de Bash Script.
 
 
 			</textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
-    <script>
-      var slideshow = remark.create();
-    </script>
-  </body>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+
+  </script>
+  <script>
+    var slideshow = remark.create();
+  </script>
+</body>
 </html>

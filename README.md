@@ -1,7 +1,5 @@
-Minicurso Linux
-===============
+TeachMeLinux
+============
 
-Esse é um repositório que será usado para facilitar o minicurso de Linux que darei na Semcomp ß
-
-Notas do palestrante
---------------------
+Um repositório de apoio para o minicurso introdutório de
+Linux, a ser ministrado no IFSC Software Freedom Day.
