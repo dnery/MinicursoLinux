@@ -12,6 +12,12 @@
     body {
       font-family: 'Lato', 'Avenir Next', 'Avenir', 'Trebuchet MS', 'Segoe UI', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
       color: white;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    p {
+      font-size: 122%;
     }
 
     h1,
@@ -20,6 +26,21 @@
       font-family: 'Lato', 'Avenir Next', 'Avenir', 'Trebuchet MS', 'Segoe UI', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
       font-weight: normal;
       color: white;
+    }
+
+    a:link,
+    a:visited {
+      background-color: #f44336;
+      color: white;
+      padding: 1px 6px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a:hover,
+    a:active {
+      background-color: red;
     }
 
     .remark-code,
@@ -33,7 +54,7 @@
 </head>
 
 <body>
-  <textarea id="source">
+<textarea id="source">
 
 background-image: url(background.png)
 background-position: center;
@@ -125,7 +146,7 @@ pacotes (aprenderemos a trabalhar com estes).
 
 - Pacman (Arch)
 
-- etc
+- Entre outros
 
 ---
 background-image: url(background.png)
@@ -136,7 +157,7 @@ background-size: contain;
 Linux
 =====
 
-<h3> Outros Linux NON-GNU </h3>
+<h3> Outros Linux non-GNU </h3>
 
 Apesar de (ainda) não dominar o mundo do desktop, Linux é a cara da computação pervasiva.
 
@@ -146,7 +167,7 @@ Apesar de (ainda) não dominar o mundo do desktop, Linux é a cara da computaç�
 
 - Sistemas embarcados em geral
 
-- etc
+- Entre outros
 
 ---
 background-image: url(background.png)
@@ -243,7 +264,7 @@ backgorund-size: contain;
 
 - `less`, `more` e `most`
 
-  Inspeciona os conteúdos de um arquivo, na forma de um paginador de terminal.
+  São todos paginadores de terminal.
 
 ---
 background-image: url(background.png)
@@ -287,7 +308,9 @@ backgorund-size: contain;
 
 - `kill`, `pkill`
 
-  Mata um processo em execução; <a href="http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_12_01.html"> sinais específicos podem ser usados.</a>
+  Mata um processo em execução.
+
+  <a href="http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_12_01.html" target="_blank"> Sinais específicos podem ser usados.</a>
 
 ---
 background-image: url(background.png)
@@ -299,14 +322,13 @@ backgorund-size: contain;
 
 - `man`
 
-  Abra o manual de algum comando ou funcionalidade do Kernel.
+  Abra o manual de algum comando ou funcionalidade.
 
 - `ps`
   ```sh
   ps a    # todos meus processos, de todos meus terminais
   ps x    # todos meus processos, atrelados ou não a um terminal
   ps axu  # informações de todos os processos, de todos usuários
-
   # adicionar a opção f imprime a saída em formato de árvore de processos
   ```
 
@@ -324,7 +346,7 @@ backgorund-size: contain;
 
 <h2> Salve sua própria vida! </h2>
 
-- <h3>Editores de texto!!!</h3>
+- <h3>Editores de texto</h3>
 
   - `nano`
 
@@ -334,9 +356,9 @@ backgorund-size: contain;
 
   Tecle `ESC` para o modo normal, e então `:q!` e `ENTER` para sair!
 
-- <a href="http://tldp.org/LDP/abs/html/x9644.html"><h3>Comandos de Job Control!!!</h3></a>
+- <h3> <a href="http://tldp.org/LDP/abs/html/x9644.html" target="_blank">Comandos de Job Control</a> </h3>
 
-- <a href="http://www.tldp.org/LDP/abs/html/io-redirection.html"><h3>Redirecionamento de entrada/saída!!!</h3></a>
+- <h3> <a href="http://www.tldp.org/LDP/abs/html/io-redirection.html" target="_blank">Redirecionamento de entrada/saída</a> </h3>
 
 ---
 background-image: url(background.png)
@@ -347,19 +369,18 @@ backgorund-size: contain;
 Mais alguns atalhos úteis
 -------------------------
 
+- `Ctrl+R`
+
+  Inicia a busca reversa no histórico de comandos.
+
 - `Ctrl+D`
 
-  Envia o caractere "fim de arquivo" (EOF) para o programa.
-  Caso o programa espere um input, isso pode sinalizar input vazio ou fim de input.
+  Envia o caractere "fim de arquivo" (`EOF`) para a shell.
 
   ```sh
   tee arquivo-teste.txt
   # digite algumas coisas e aperte Ctrl+D
   ```
-
-- `Ctrl+R`
-
-  Inicia a busca reversa no histórico de comandos.
 
 - `Ctrl+L`
 
@@ -381,6 +402,19 @@ E a interface gráfica?
 Um pouco sobre X11 e Xorg.
 --------------------------
 
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+backgorund-size: contain;
+class: center
+
+<h3>
+  Distros, GUIs... por que tantas escolhas?
+</h3>
+
+<img src="menageX2.png" alt="Menage">
+
 <!-- part4 -->
 <!-- TODO Como usar o gerenciador de pacotes da plataforma?  -->
 
@@ -396,7 +430,7 @@ Estrutura de diretórios
 =======================
 
 Sistemas Linux seguem um padrão de hierarquia do sistema de arquivos.
-A presença de um servidor de display gráfico pode estender um pouco essa estrutura.
+Pode ser maior em alguns casos.
 
 - A raíz do sistema:
 
@@ -409,8 +443,6 @@ A presença de um servidor de display gráfico pode estender um pouco essa estru
 - A pasta pessoal do usuário `root` (administrador):
 
   `/root`
-
-  de acesso restrito, normalmente guarda configurações específicas do usuário administrador.
 
 ---
 background-image: url(background.png)
@@ -425,16 +457,13 @@ Estrutura de diretórios
 
   `/boot`
 
-- Executáveis binários essenciais:
+- Arquivos temporários (Apagados a cada reboot).
+
+  `/tmp`
+
+- Executáveis binários essenciais para administração do sistema:
 
   `/bin`, `/sbin`
-
-  aplicações vitais ao modo single user (modo de segurança),
-  como `cd`, `ls`, `mv`, `cat`, `find`, `grep`, etc.
-
-- `/tmp`
-
-  Arquivos temporários (Apagados a cada reboot).
 
 ---
 background-image: url(background.png)
@@ -460,9 +489,7 @@ Estrutura de diretórios
   
   - `/etc/shadow`: informações de senhas
 
-  - `/etc/passwd`: informações de usuários
-  
-  - `/etc/fstab`: informações do sistema de arquivos
+  - `/etc/passwd`: informações de usuários e grupos
 
 ---
 background-image: url(background.png)
@@ -479,17 +506,13 @@ Estrutura de diretórios
 
 - Dispositivos de input/output:
 
-  `/dev/`
+  `/dev`
 
   no Linux, <b>tudo é um arquivo.</b>
 
   - `/dev/null`: dispositivo nulo
 
   - `/dev/urandom`: eventos de entrada aleatórios
-
-  - `/dev/tty*`: eventos de input dos terminais emulados por kernel
-
-  - `/dev/pts/*`: eventos de input dos terminais emulados pelo sistema do usuário
 
 ---
 background-image: url(background.png)
@@ -508,13 +531,11 @@ Estrutura de diretórios
 
   `/mnt`
 
-  dispositivos externos normalmente são montados em `/media`.
-
 - Aplicações e utilidades de usuários:
 
   `/usr`
 
-  hierarquia secundária para dados de modo multi-usuário.
+  <a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard" target="_blank"> hierarquia secundária para dados de modo multi-usuário. </a>
 
 ---
 background-image: url(background.png)
@@ -533,7 +554,7 @@ background-repeat: no-repeat;
 background-size: contain;
 class: middle, center
 
-<a href="http://www.tldp.org/LDP/abs/html/moreadv.html"><h1>find + grep</h1></a>
+<h1> <a href="http://www.tldp.org/LDP/abs/html/moreadv.html" target="_blank">find + grep</a> </h1>
 
 ---
 background-image: url(background.png)
@@ -544,6 +565,70 @@ class: middle, center
 
 updatedb + locate
 =================
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+Exemplo com find
+----------------
+
+Encontre quais os nomes de funções declaradas em quais arquivos javascript (e em quais linhas) na hierarquia atual de diretórios.
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+Exemplo com find
+----------------
+
+Encontre quais os nomes de funções declaradas em quais arquivos javascript (e em quais linhas) na hierarquia atual de diretórios.
+
+```sh
+find . -type f -name "*.js" -exec grep -n -P "function" {} \;
+```
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+Exemplo com find
+----------------
+
+Encontre quais os nomes de funções declaradas em quais arquivos javascript (e em quais linhas) na hierarquia atual de diretórios.
+
+```sh
+find . -type f -name "*.js" -exec grep -n -P "function" {} \;
+```
+
+Gere um arquivo `my-func.js` incluindo o cabeçalho e corpo de uma das funções encontradas.
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+Exemplo com find
+----------------
+
+Encontre quais os nomes de funções declaradas em quais arquivos javascript (e em quais linhas) na hierarquia atual de diretórios.
+
+```sh
+find . -type f -name "*.js" -exec grep -n -P "function" {} \;
+```
+
+Gere um arquivo `my-func.js` incluindo o cabeçalho e corpo de uma das funções encontradas.
+
+```sh
+sed -n 3,4p javascript/classes/Animal.js > my-func.js  # por exemplo
+```
 
 <!-- part6 -->
 ---
@@ -560,15 +645,15 @@ O sistema de permissões é dividido em 3 partes principais.
 
 - Permissões de dono
 
-  Denominado por `u` (user). Define quais permissões do dono do arquivo tem sobre ele.
+  Denominado por `u` (user).
 
 - Permissões de grupo
 
-  Denominado por `g` (group). Define quais permissões os usuários no grupo do dono tem sobre o arquivo.
+  Denominado por `g` (group).
 
 - Permissões de outros
 
-  Denominado por `o` (other). Define quais permissões os outros usuários tem sobre o arquivo.
+  Denominado por `o` (other).
 
 ---
 background-image: url(background.png)
@@ -603,8 +688,6 @@ Permissões
 ==========
 
 <h3> O usuário root </h3>
-
-O `root` é o usuário com privilégios máximos no sistema operacional. Ele pode fazer **tudo**.
 
 Para usar os poderes do `root` para executar um comando, é possível usar o programa `sudo` (switch user and do) ou `su` (switch user).
 
@@ -672,15 +755,15 @@ O dono do arquivo (ou `root`) pode alterar as permissões e outras característi
 
 - `chmod`
 
-  Altere as permissões (change mode bits). Abra `man chmod`.
+  Altere as permissões (change mode bits).
 
 - `chown`
 
-  Altere a posse e grupo (change owner and group). Abra `man chown`.
+  Altere a posse e grupo (change owner and group).
 
 - `chattr`
 
-  Altere os atributos do arquivo (change attributes). Abra `man chattr`.
+  Altere os atributos do arquivo (change attributes).
 
 <!-- part7 -->
 <!-- TODO uma seção só sobre variáveis de ambiente -->
@@ -694,8 +777,8 @@ background-position: center;
 background-repeat: no-repeat;
 backgorund-size: contain;
 
-Perguntas, Revisão e Aprofundamento
-===================================
+Perguntas e aprofundamento
+==========================
 
 <!-- referencias -->
 <!-- TODO incluir o restante das referencias!!! -->
@@ -708,43 +791,38 @@ backgorund-size: contain;
 Referencias
 -----------
 
-Como instalar Manjaro em Dual Boot com Windows.
-[https://www.vivaolinux.com.br/dica/Manjaro-Linux-Dualboot-com-W8-W81-e-W10](https://www.vivaolinux.com.br/dica/Manjaro-Linux-Dualboot-com-W8-W81-e-W10)
+<a href="https://www.vivaolinux.com.br/dica/Manjaro-Linux-Dualboot-com-W8-W81-e-W10" target="_blank">
+  Como instalar Manjaro em Dual Boot com Windows.
+</a>
 
-Como instalar Ubuntu em Dual boot com Windows.
-[http://www.everydaylinuxuser.com/2015/11/how-to-install-ubuntu-linux-alongside.html](http://www.everydaylinuxuser.com/2015/11/how-to-install-ubuntu-linux-alongside.html)
+<a href="http://www.everydaylinuxuser.com/2015/11/how-to-install-ubuntu-linux-alongside.html" target="_blank">
+  Como instalar Ubuntu em Dual boot com Windows.
+</a>
 
-Explicação da estrutura de arquivos do Linux.
-[http://www.thegeekstuff.com/2010/09/linux-file-system-structure/](http://www.thegeekstuff.com/2010/09/linux-file-system-structure/)
+<a href="http://www.thegeekstuff.com/2010/09/linux-file-system-structure/" target="_blank">
+  Mais sobre a estrutura do sistema de arquivos Linux.
+</a>
 
-Explicação das permissões de arquivos.
-[https://www.vivaolinux.com.br/artigo/Entendendo-as-permissoes-no-Linux](https://www.vivaolinux.com.br/artigo/Entendendo-as-permissoes-no-Linux)
+<a href="https://www.linux.com/learn/understanding-linux-file-permissions" target="_blank">
+  Mais sobre permissões mais avançadas.
+</a>
 
-Explicação de permissões mais avançadas (Extra).
-[https://www.linux.com/learn/understanding-linux-file-permissions](https://www.linux.com/learn/understanding-linux-file-permissions)
+<a href="https://www.vivaolinux.com.br/artigo/Entendendo-as-permissoes-no-Linux" target="_blank">
+  Mais sobre permissões de arquivos.
+</a>
 
-Tutorial **completo** de Bash Shell.
-[http://linuxcommand.org/lc3_learning_the_shell.php](http://linuxcommand.org/lc3_learning_the_shell.php)
+<a href="http://linuxcommand.org/lc3_learning_the_shell.php" target="_blank">
+  Zero to Hero em manipulação Bash.
+</a>
 
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
+<a href="http://linuxcommand.org/lc3_writing_shell_scripts.php" target="_blank">
+  Zero to Hero em Bash scripting.
+</a>
 
-Referencias
------------
+</textarea>
 
-Extra: Tutorial de Bash Script.
-[http://linuxcommand.org/lc3_writing_shell_scripts.php](http://linuxcommand.org/lc3_writing_shell_scripts.php)
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js"> </script>
+  <script> var slideshow = remark.create(); </script>
 
-
-			</textarea>
-  <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-
-  </script>
-  <script>
-    var slideshow = remark.create();
-  </script>
 </body>
 </html>
