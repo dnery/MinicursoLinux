@@ -48,9 +48,8 @@ Gustavo Aguiar, Danilo Nery
 
 Software Freedom Day
 
-IFSC - USP
-
 <!-- part1 -->
+<!-- introdução e bate-papo -->
 ---
 background-image: url(background.png)
 background-position: center;
@@ -117,10 +116,15 @@ Linux
 
 <h3> O que são distribuições Linux e diferenças? </h3>
 
-Um Sistema Operacional GNU/Linux com adição de pacotes, configurações e de um gerenciador de pacotes.
+Um Sistema Operacional GNU/Linux com adição de pacotes, configurações e de um gerenciador de
+pacotes (aprenderemos a trabalhar com estes).
+
 - Apt (Ubuntu, Debian)
+
 - YaST (OpenSUSE)
+
 - Pacman (Arch)
+
 - etc
 
 ---
@@ -135,9 +139,13 @@ Linux
 <h3> Outros Linux NON-GNU </h3>
 
 Apesar de (ainda) não dominar o mundo do desktop, Linux é a cara da computação pervasiva.
+
 - Smart TVs
+
 - Smartphones (Android)
+
 - Sistemas embarcados em geral
+
 - etc
 
 ---
@@ -152,9 +160,23 @@ class: center,middle
 <h2> Por quê Linux? O que esperamos? </h2>
 
 <!-- part2 -->
-<!-- TODO O que são terminais reais (ttys) ? -->
-  <!-- TODO O básico da edição de texto para resolver problemas -->
-  <!-- TODO O básico da linha de comando para resolver problemas (seção seguinte)? -->
+<!-- O que são terminais reais (ttys) ? -->
+<!-- O básico da edição de texto para resolver problemas -->
+<!-- O básico da linha de comando para resolver problemas (seção seguinte)? -->
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+class: center, middle
+
+O terminal de comando (tty)
+===========================
+
+<img src="nuts.jpg" alt="Nuts">
+
+<h3> A interface fundamental entre usuário e Linux </h3>
+
 ---
 background-image: url(background.png)
 background-position: center;
@@ -168,6 +190,7 @@ O shell bash (Bourne Again SHell) é a implementação mais popular de uma shell
 Existem várias alternativas, cada uma com suas características (ksh, zsh, csh, fish, etc).
 
 <h3> Trabalho de uma shell </h3>
+
 - Fornecer uma interface entre o usuário e o sistema operacional
 
 - Gerenciar um ambiente para execução de programas
@@ -181,6 +204,10 @@ background-repeat: no-repeat;
 backgorund-size: contain;
 
 <h2> Comandos básicos </h2>
+
+- `pwd`
+
+  Minha localização atual na hierarquia de diretórios.
 
 - `ls`
 
@@ -201,6 +228,10 @@ background-repeat: no-repeat;
 backgorund-size: contain;
 
 <h2> Comandos básicos </h2>
+
+- `echo`
+  
+  Repita/ecoe o que lhe foi dito.
 
 - `cat`
 
@@ -230,14 +261,131 @@ backgorund-size: contain;
 
   Cria um novo diretório vazio.
 
-- `.` (AKA source)
+- `.` ou `source`
 
   Executa, na shell atual, o conteúdo de um arquivo.
 
-<!-- TODO O que é a sessão gráfica (dada por Xorg) ? -->
-<!-- TODO O que são terminais na sessão gráfica (ptss) ? -->
+- `rm`, `rmdir`
+
+  Remova/apague um arquivo ou diretório.
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+backgorund-size: contain;
+
+<h2> Salve sua própria vida! </h2>
+
+- Atalhos para sinais:
+
+  - `Ctrl+C` finaliza a execução do programa em mãos
+
+  - `Ctrl+Z` pausa a execução do programa em mãos
+
+  - `Ctrl+Y` requisita uma pausa atrasada
+
+- `kill`, `pkill`
+
+  Mata um processo em execução; <a href="http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_12_01.html"> sinais específicos podem ser usados.</a>
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+backgorund-size: contain;
+
+<h2> Salve sua própria vida! </h2>
+
+- `man`
+
+  Abra o manual de algum comando ou funcionalidade do Kernel.
+
+- `ps`
+  ```sh
+  ps a    # todos meus processos, de todos meus terminais
+  ps x    # todos meus processos, atrelados ou não a um terminal
+  ps axu  # informações de todos os processos, de todos usuários
+
+  # adicionar a opção f imprime a saída em formato de árvore de processos
+  ```
+
+  Obtenha informações sobre processos em execução.
+
+- `w`
+
+  Saiba QUEM está fazendo O QUÊ.
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+backgorund-size: contain;
+
+<h2> Salve sua própria vida! </h2>
+
+- <h3>Editores de texto!!!</h3>
+
+  - `nano`
+
+  Tecle `Ctrl+X` para sair!
+
+  - `vim`
+
+  Tecle `ESC` para o modo normal, e então `:q!` e `ENTER` para sair!
+
+- <a href="http://tldp.org/LDP/abs/html/x9644.html"><h3>Comandos de Job Control!!!</h3></a>
+
+- <a href="http://www.tldp.org/LDP/abs/html/io-redirection.html"><h3>Redirecionamento de entrada/saída!!!</h3></a>
+
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+backgorund-size: contain;
+
+Mais alguns atalhos úteis
+-------------------------
+
+- `Ctrl+D`
+
+  Envia o caractere "fim de arquivo" (EOF) para o programa.
+  Caso o programa espere um input, isso pode sinalizar input vazio ou fim de input.
+
+  ```sh
+  tee arquivo-teste.txt
+  # digite algumas coisas e aperte Ctrl+D
+  ```
+
+- `Ctrl+R`
+
+  Inicia a busca reversa no histórico de comandos.
+
+- `Ctrl+L`
+
+  Limpa a tela (da mesma forma que o comando `clear`).
 
 <!-- part3 -->
+<!-- O que é a sessão gráfica (dada por Xorg)? -->
+<!-- O que são terminais na sessão gráfica (ptss)? -->
+---
+background-image: url(background.png)
+background-position: center;
+background-repeat: no-repeat;
+backgorund-size: contain;
+class: middle, center
+
+E a interface gráfica?
+======================
+
+Um pouco sobre X11 e Xorg.
+--------------------------
+
+<!-- part4 -->
+<!-- TODO Como usar o gerenciador de pacotes da plataforma?  -->
+
+<!-- part5 -->
+<!-- TODO Como usar o gerenciador de pacotes da plataforma?  -->
 ---
 background-image: url(background.png)
 background-position: center;
@@ -286,7 +434,7 @@ Estrutura de diretórios
 
 - `/tmp`
 
-  Arquivos temporários (Apagados a cada reboot)
+  Arquivos temporários (Apagados a cada reboot).
 
 ---
 background-image: url(background.png)
@@ -295,7 +443,7 @@ background-repeat: no-repeat;
 background-size: contain;
 
 Estrutura de diretórios
-======================
+=======================
 
 - Processos e sockets:
 
@@ -323,7 +471,7 @@ background-repeat: no-repeat;
 background-size: contain;
 
 Estrutura de diretórios
-======================
+=======================
 
 - Bibliotecas essenciais aos binários em `/bin` e `/sbin`:
 
@@ -350,7 +498,7 @@ background-repeat: no-repeat;
 background-size: contain;
 
 Estrutura de diretórios
-======================
+=======================
 
 - Arquivos de conteúdo variável e que tendem a crescer (logs, cache, spool):
 
@@ -368,217 +516,36 @@ Estrutura de diretórios
 
   hierarquia secundária para dados de modo multi-usuário.
 
-<!-- part3 -->
-<!-- TODO uma seção só sobre variáveis de ambiente -->
-<!-- TODO como um programa C, por exemplo, pode fazer proveito de uma variável de ambiente? -->
 ---
 background-image: url(background.png)
 background-position: center;
 background-repeat: no-repeat;
-backgorund-size: contain;
+background-size: contain;
+class: middle, center
 
-Variáveis
----------
-
-```sh
-VARIAVEL="batata" # Note que não é possível colocar um espaços
-echo "$VARIAVEL"
-# source e . tem o mesmo significado
-. ~/MinicursoLinux/bash/sourceme
-echo "$VARIAVEL"
-```
+Como encontrar coisas no meu sistema???
+=======================================
 
 ---
 background-image: url(background.png)
 background-position: center;
 background-repeat: no-repeat;
-backgorund-size: contain;
+background-size: contain;
+class: middle, center
 
-Variáveis
----------
-
-```sh
-cd ~/MinicursoLinux/bash
-VARIAVEL="batata"
-./ambiente.sh
-VARIAVEL="potato" ./ambiente.sh
-echo "$VARIAVEL"
-export VARIAVEL
-./ambiente.sh
-```
-
-Visualizar variáveis de ambiente com `env`
-
-#### Prompt do Bash
-
-```sh
-echo "'$PS1'"
-# `\033[01;35m` é o caracter especial da cor vermelha
-# usar `\w` ao invés de `\W` mostra o caminho completo do diretório atual
-PS1="\[\033[01;35m\][\u@\h\[\033[01;37m\] \w\[\033[01;35m\]]\$\[\033[00m\] "
-```
+<a href="http://www.tldp.org/LDP/abs/html/moreadv.html"><h1>find + grep</h1></a>
 
 ---
 background-image: url(background.png)
 background-position: center;
 background-repeat: no-repeat;
-backgorund-size: contain;
+background-size: contain;
+class: middle, center
 
-Sinais
-------
+updatedb + locate
+=================
 
-- `Ctrl+C`
-
-Envia um sinal SIGINT (interrupt -2) para a aplicação rodando em foreground.
-
-O comportamento padrão da aplicação é de cancelar ou interromper a operação atual ao receber esse sinal (muitas vezes isso significa finalizar o programa), mas ele pode ser ignorado ou significar qualquer outro comportamento, dependendo da aplicação.
-
-Outros sinais existem, os mais úteis são SIGTERM (terminate -15) e SIGKILL (kill -9). O programa `kill` pode enviar sinais para outras aplicações rodando.
-
-```sh
-pgrep firefox
-kill -15 PID
-```
-
-```sh
-./persistent.sh # rodar em outro terminal
-# Tente apertar Ctrl+C
-pgrep persistent.sh
-kill -2 PID # SIGINT o mesmo que Ctrl+C
-kill -15 PID # SIGTERM pede para fechar 'gracefully'
-kill -9 PID # SIGKILL mata o processo
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Outros Atalhos
---------------
-
-- `Ctrl+D`
-
-Envia EOF (End Of File ou Fim De Arquivo) para o programa. Caso o programa espere um input, isso pode significar input vazio ou fim de input.
-
-```sh
-cat
-# Digite algumas coisas e aperte Ctrl+D
-```
-
-- `Ctrl+R`
-
-Inicia a busca reversa no histórico de comandos
-
-- `Ctrl+L`
-
-Limpa a tela (da mesma forma que o comando `clear`)
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Múltiplos processos
--------------------
-
-- `Ctrl+Z`
-
-Pausa o processo que está no foreground
-
-```sh
-./loud.sh
-# Pressione Ctrl+Z
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Job Control
------------
-
-O comando `jobs` lista os processos ativos no shell atual, no foreground, background e os pausados.
-
-Para enviar um processo para o background, primeiro deve-se pausá-lo (Ctrl+Z), depois executar `bg`.
-
-Para devolver um processo para o foreground, basta executar `fg`
-
-```sh
-jobs # lista os processos
-# [1]+  Parado                  ./loud.sh
-bg # envia para o background
-fg # trás de volta para o foreground
-```
-
-O operador & pode ser adicionado no final do comando para executá-lo no background
-
-```sh
-./loud.sh &
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Redirecionamento
-----------------
-
-O bash também permite redirecionar o output e o input dos comandos executados.
-
-Existem uma entrada e duas saídas padrão para cada programa, são chamados `stdin` (input) `stdout` (output) e `stderr` (erro).
-
-Eles são enumerados 0 - input, 1 - output e 2 - erro.
-
---
-
-Redirecionar `stdout` para um arquivo com `>` ou `1>`
-
-```sh
-echo "Eu não vou aparecer na tela" > echoed.txt
-cat echoed.txt
-```
-
-Redirecionar `stdout` para o fim de um arquivo `>>` ou `1>>`
-
-```sh
-echo "Eu vou para o final do arquivo" >> echoed.txt
-cat echoed.txt
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Redirecionamento
-----------------
-
-Para redirecionar `stderr` basta adicionar o número dele nos `>`, por exemplo `2>`
-```sh
-./error.py > echoed.txt
-cat echoed.txt
-./error.py 2> echoed.txt
-```
-
-Para redirecionar o `stdin` é usado `<` ao invés de `>`
-```sh
-cat < echoed.txt
-```
-
-Também é possível encaminhar a saída de um programa para a entrada do próximo. Isso é chamado de piping `|`
-```sh
-echo "pipes are fun" | sed 's/fun/awesome/'
-# Vamos ver sed mais para frente no curso
-```
-
+<!-- part6 -->
 ---
 background-image: url(background.png)
 background-position: center;
@@ -587,21 +554,21 @@ backgorund-size: contain;
 
 Permissões
 ==========
-Todo o arquivo tem um usuário dono e um grupo dono.
 
+Todo o arquivo tem permissões de controle de acesso.
 O sistema de permissões é dividido em 3 partes principais.
 
-- permissões de dono
+- Permissões de dono
 
-Denominado por `u` (user permissions). Define quais permissões do dono do arquivo tem sobre ele.
+  Denominado por `u` (user). Define quais permissões do dono do arquivo tem sobre ele.
 
-- permissões de grupo
+- Permissões de grupo
 
-Denominado por `g` (group permissions). Define quais permissões os usuários pertencentes ao grupo dono do arquivo tem sobre ele.
+  Denominado por `g` (group). Define quais permissões os usuários no grupo do dono tem sobre o arquivo.
 
-- permissões de outros
+- Permissões de outros
 
-Denominado por `o` (other permissions). Define quais permissões os outros usuários tem sobre o arquivo
+  Denominado por `o` (other). Define quais permissões os outros usuários tem sobre o arquivo.
 
 ---
 background-image: url(background.png)
@@ -612,19 +579,19 @@ backgorund-size: contain;
 Permissões
 ==========
 
-Alem disso existem 3 permissões básicas.
+As permissões em si, para cada domínio, são dividas em 3 básicas.
 
 - Leitura
 
-Denominada por `r` (read). Com valor octal 4.
+  Denominada por `r` (read), Com valor octal 4.
 
 - Escrita
 
-Denominada por `w` (write). Com valor octal 2.
+  Denominada por `w` (write), Com valor octal 2.
 
 - Execução
 
-Denominada por `x` (eXecute). Com valor octal 1.
+  Denominada por `x` (eXecute), Com valor octal 1.
 
 ---
 background-image: url(background.png)
@@ -635,21 +602,18 @@ backgorund-size: contain;
 Permissões
 ==========
 
-O usuário ROOT
---------------
+<h3> O usuário root </h3>
 
-O usuário `root` ou SuperUsuário, é o usuário com poderes máximos do sistema operacional. Ele pode fazer **tudo**.
+O `root` é o usuário com privilégios máximos no sistema operacional. Ele pode fazer **tudo**.
 
-Para usar os poderes do `root` para executar um comando, é possível usar o programa `sudo` (Switch User and DO) ou `su` (Switch User). Sem nenhuma opção adicional, esses comandos tentam trocar o usuário para o `root`, mas é possível usá-los para executar comandos como outros usuários também.
+Para usar os poderes do `root` para executar um comando, é possível usar o programa `sudo` (switch user and do) ou `su` (switch user).
 
-```
+```sh
 cat /etc/shadow
 sudo cat /etc/shadow
 ```
 
-"With great power, comes great responsibility" --Uncle Ben.
-
-Como `root` é possível executar os mais destrutivos comandos sem pedir duas vezes. O programa rodando como `root` tem poderes de fazer absolutamente qualquer coisa no sistema. O sistema não pedirá nenhuma confirmação além da senha do `root` para isso.
+Como `root` é possível executar os comandos mais destrutivos gratuitamente e, por isso, **operar o tempo todo como `root` é considerada uma má prática.**
 
 ---
 background-image: url(background.png)
@@ -660,26 +624,13 @@ backgorund-size: contain;
 Permissões
 ==========
 
-As permissões são expressas por meio de um número octal de 3 dígitos.
+<h3> Bits de controle de acesso </h3>
 
-O primeiro dígito se refere ao usuário, o segundo ao grupo e o terceiro aos outros.
+- As permissões são expressas por meio de um número octal de 3 dígitos.
 
-O valor de cada dígito define as permissões que aquela categoria tem sobre o arquivo.
+- O primeiro dígito se refere ao usuário, o segundo ao grupo e o terceiro aos outros.
 
-Por exemplo, um arquivo com permissão 664 (-rw-rw-r--) pode ser lido por todos os usuários, mas apenas alterado pelo dono ou usuários no grupo-dono. Nenhum usuário pode executar esse arquivo.
-
-```
--rw-rw-r--
-^ ^  ^  ^
-| |  |  |
-| |  |  L 3 bit dos outros (read = 4)
-| |  |
-| |  L 3 bits do grupo (read+write = 4+2 = 6)
-| |
-| L 3 bits do usuário (read+write = 4+2 = 6)
-|
-L bit de tipo de arquivo (- = arquivo, d = diretório, l = link)
-```
+- O valor de cada dígito define as permissões que aquela categoria tem sobre o arquivo.
 
 ---
 background-image: url(background.png)
@@ -690,43 +641,23 @@ backgorund-size: contain;
 Permissões
 ==========
 
-O dono do arquivo (ou `root`) pode alterar as permissões usando `chmod`.
+- **Exemplo:** um arquivo com permissão 664 (-rw-rw-r--) pode ser lido por todos os usuários,
+  mas apenas alterado por usuários no grupo do dono. Nenhum usuário pode executar esse arquivo.
 
-`chmod` pode ser usado com o valor numérico da permissão, como `chmod 664 arquivo.txt` ou como adição/remoção de permissões individuais. `chmod u+x arquivo.sh` `chmod o-r arquivo.txt`
-
-```sh
-touch arquivo.txt
-ls -l arquivo.txt
-chmod o-r arquivo.txt
-ls -l arquivo.txt
-chmod 755 arquivo.txt
-ls -l
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Programas úteis
-===============
-
-A maioria das distribuições de Linux já vem com uma série de programas úteis que seguem a filosofia UNIX.
-
-"
-
-This is the Unix philosophy:
-
-> Write programs that do one thing and do it well.
-
-> Write programs to work together.
-
-> Write programs to handle text streams, because that is a universal interface.
-
-"
-
->> -Doug McIlroy
+  ```sh
+  -rw-rw-r--
+  ^^  ^  ^  ^
+  ||  |  |  |
+  ||  |  |  sticky bit (opcional)
+  ||  |  |
+  ||  |  3 bits para os outros (read = 4)
+  ||  |
+  ||  3 bits para o grupo (read+write = 4+2 = 6)
+  ||
+  |3 bits para o usuário dono (read+write = 4+2 = 6)
+  |
+  bit para o tipo de arquivo (- = arquivo, d = diretório, l = link)
+  ```
 
 ---
 background-image: url(background.png)
@@ -734,443 +665,28 @@ background-position: center;
 background-repeat: no-repeat;
 backgorund-size: contain;
 
-Programas úteis
-===============
+Permissões
+==========
 
-- `echo`
+O dono do arquivo (ou `root`) pode alterar as permissões e outras características de arquivos e diretórios usando as seguintes ferramentas.
 
-`echo` é um programa que apenas repete o que foi dado como argumento no output.
+- `chmod`
 
-Ele é muito usado para redirecionar texto para outros programas com pipe `|`
+  Altere as permissões (change mode bits). Abra `man chmod`.
 
-```sh
-echo "Um texto"
-```
+- `chown`
 
-- `cat`
+  Altere a posse e grupo (change owner and group). Abra `man chown`.
 
-`cat` é um programa que tem por objetivo concatenar arquivos
+- `chattr`
 
-```sh
-cat header.txt body.txt footer.txt > document.txt
-```
+  Altere os atributos do arquivo (change attributes). Abra `man chattr`.
 
-`cat` também é muito usado simplesmente para ler o conteúdo de um arquivo e redirecionar para outro programa com pipe `|`
+<!-- part7 -->
+<!-- TODO uma seção só sobre variáveis de ambiente -->
+<!-- TODO como um programa C, por exemplo, pode fazer proveito de uma variável de ambiente? -->
 
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Programas úteis
-===============
-
-- `less` ou `more`
-
-`less` e `more` são programas chamados pagers. Eles servem para gerenciar saída maior do que o tamanho da tela, providenciando scroll e busca
-
-- `tail` e `head`
-
-`less` e `more` são programas que filtram o output num número máximo de linhas (10 por padrão).
-
-```sh
-seq 1 90 | tail -15
-seq 1 90 | head -15
-```
-
-- `dmesg`
-
-Imprime o buffer de mensagens do kernel.
-
-```sh
-dmesg | tail -20
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Programas úteis
-===============
-
-- `mkdir`
-
-Cria um diretório (MaKe DIRectory).
-
-```sh
-mkdir novapasta
-cd novapasta
-```
-
-- `touch`
-
-Altera a data de modificação de um arquivo, por padrão para a data atual. Cria o arquivo se ele não existir.
-
-```sh
-touch arquivo.txt
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Programas úteis
-===============
-
-- `cp`
-
-CoPia um arquivo para um novo destino.
-
-```sh
-cp arquivo.txt arquivo-copia.txt
-```
-
-- `mv`
-
-MoVe um arquivo para um novo destino. Pode também renomear arquivos.
-
-```sh
-mv arquio.txt arquivo.txt
-```
-
-- `ln`
-
-Cria um LiNk para o arquivo destino. Links podem ser simbólicos ou físicos.
-
-```sh
-ln nomedosymlink arquivo.txt
-ln -s nomedohardlink arquivo.txt
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Programas úteis
-===============
-
-- `rmdir`
-
-ReMove um DIRetório vazio.
-
-```sh
-rmdir novapasta
-```
-
-- `rm`
-
-ReMove um arquivo (deleta) **permanentemente**. Não há _Lixeira_
-
-```sh
-rm arquivo.txt
-```
-
-Não há um jeito (fácil) de recuperar um arquivo **removido**
-
-Cuidado com as opções -r (recursivo) e -f (forçado). Use -i (interativo) sempre que possível.
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Programas úteis
-===============
-
-- `nano`
-
-`nano` é um simples editor de texto para o terminal.
-
-```sh
-nano arquivo.txt
-```
-
-Use `Ctrl+X` para sair do `nano`
-
-- `vim`
-
-`vim` é um editor de texto complexo e muito poderoso, mas que depende de uma grande curva de aprendizagem.
-
-```sh
-vim arquivo.txt
-```
-
-Use `ZZ` ou `:q!` para sair do `vim`
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Grep
-----
-
-`grep` é um programa que consegue filtrar linhas de texto baseado em expressões regulares
-
-Ele é usado em 2 principais cenários.
-
-O primeiro é filtrar output de um comando.
-
-```sh
-ls -la | grep 'arquivo'
-```
-
-Outro uso importante é encontrar texto dentro de arquivos.
-
-Exemplo: listar arquivos com a palavra 'rush' e sua posição
-
-```sh
-grep -n 'rush' *
-grep -n 'wood' *
-```
-
-Também pode ser usada a opção `-n` para mostrar o número da linha em que a ocorrência aparece no arquivo.
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Grep
-----
-
-Exercício
----------
-
-Imprima todos os endereços de e-mail do arquivo `data.txt`
-
---
-
-```sh
-grep '.\+@.\+\(\..\+\)\+' data.txt
-```
-
-`.\+` - qualquer carácter uma ou mais vezes
-
-`@` - um @
-
-`.\+` - qualquer carácter uma ou mais vezes
-
-`\(\..\+\)\+` - grupo de '.' seguido de caracteres uma ou mais vezes
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Find
-====
-
-`find` é outro programa poderoso, ele pode encontrar arquivos no sistema. A busca pode ser feita levando em consideração várias características, como nome do arquivo `-name`, tamanho do arquivo `-size`, tempo de modificação `-ctime`, permissão de acesso `-perm` entre outros.
-
-Ele também pode operar em cima dos arquivos encontrados. é possível removê-los `-delete`, listá-los `-print`, ou executar outro comando `-exec`
-
-Exercício
----------
-
-Listar nomes de funções javascript  usando `find -exec` com `grep`
-
---
-
-Agora use `grep` com a opção `-B1` para incluir a linha anterior ao match
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Cut
-===
-
-`cut` é um programa que consegue separar o input em colunas separadas por um separador.
-
-É possível selecionar o delimitador com o argumento `-d` e selecionar colunas com `-f`
-
-Exemplo: Selecionar o nome de todas as pessoas que devem alguma coisa
-
-```sh
-cat bills.csv | cut -d',' -f1
-```
-
---
-
-Outro Exemplo: Seleciona o nome de todas as pessoas envolvidas em transações
-
-```sh
-cat <(cat bills.csv | cut -d',' -f1 | tail -n +2) <(cat bills.csv | cut -d',' -f3 | tail -n +2)
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Sort
-====
-
-`sort` é um programa simples que ordena o input
-
-Uniq
-====
-
-`uniq` é outro programa simples que remove linhas repetidas seguidas
-
-Tee
-===
-
-O comando `tee` recebe um input e replica-o na saída padrão e num arquivo ao mesmo tempo
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Sed
-===
-
-O comando `sed` é bastante complexo. Seu propósito é ser um editor de texto em stream.
-
-Para isso, o `sed` conta com uma série de comandos.
-
-- `p` print
-
-O comando print imprime na saída, a linha que corresponde ao match.
-
-```sh
-cat compras.txt | sed -n '/ovo/ p'
-cat compras.txt | sed -n '1,5 p'
-cat compras.txt | sed -n '1,3 p;2,6 p'
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Sed
-===
-
-- `i` Insert e `a` Append
-
-Os comandos Insert e Append adicionam texto antes ou depois da linha combinada, respectivamente.
-
-```sh
-cat compras.txt | sed '/batata/ i Comprar dois'
-cat compras.txt | sed '$ a Avisar se lembrar de mais alguma coisa'
-```
-
-- `d` Delete
-
-O comando Delete remove as linhas combinadas do input.
-
-```sh
-cat compras.txt | sed '/ovo/ d'
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Sed
-===
-
-- `s` Substitute
-
-O comando Substitute troca o texto combinado pelo seu substituto
-
-```sh
-cat livros.txt | sed 's/ - /|/'
-```
-
-- `c` Change
-
-O comando Change troca o texto da linha combinada pelo texto dado
-
-```sh
-cat compras.txt | sed '/presunto/ c 10) apresuntado'
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Sed
-===
-
-- `w` Write
-
-O comando Write escreve a saída do sed para o arquivo especificado, ao invés da saída padrão
-
-
-```sh
-cat compras.txt | sed -n -e '/batata/ w batata.txt' -e '/ovo/ w ovo.txt' -e '1~2 w impar.txt'
-```
-
-Exercício
----------
-
-Usando `seq 1 99` para gerar números, imprima todos os múltiplos de 3 que não são múltiplos de 4
-
---
-
-```sh
-seq 1 99 | sed -n -e '0~4 d' -e '0~3 p'
-```
-
----
-background-image: url(background.png)
-background-position: center;
-background-repeat: no-repeat;
-backgorund-size: contain;
-
-Sed
-===
-
-Exercício
----------
-
-Remover linhas com `<article>` ou `</article>`.
-
-Substituir `<title>` com `Title:` e `</title>` com nada.
-
-Substituir `<emphasis>` e `</emphasis>` com asteriscos `*`.
-
-Substituir a palavra `web` por `Web`.
-
-Substituir linhas começando com `<listing>` com `---begin listing`
-
-Substituir linhas começando com `</listing>` com `---end listing`
-
-???
-
-```sh
--e '/</\?article>/ d'
--e 's/<title>/Title: /;s/<\/title>//'
--e 's/<\/\?emphasis>/\*/'
--e 's/web/Web/g'
--e 's/^<listing>/---begin listing/'
--e 's/^<\/listing>/---end listing/'
-```
-
+<!-- final -->
 ---
 class: center, middle
 background-image: url(background.png)
@@ -1181,6 +697,8 @@ backgorund-size: contain;
 Perguntas, Revisão e Aprofundamento
 ===================================
 
+<!-- referencias -->
+<!-- TODO incluir o restante das referencias!!! -->
 ---
 background-image: url(background.png)
 background-position: center;
@@ -1219,8 +737,6 @@ Referencias
 
 Extra: Tutorial de Bash Script.
 [http://linuxcommand.org/lc3_writing_shell_scripts.php](http://linuxcommand.org/lc3_writing_shell_scripts.php)
-
-
 
 
 			</textarea>
